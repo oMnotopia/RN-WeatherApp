@@ -1,19 +1,29 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View, SafeAreaView, StyleSheet } from 'react-native';
 
-export default function App() {
+const App = () => {
   return (
-    <View style={{height: 100, width: 100, backgroundColor: 'orange'}}>
-
-    </View>
-  );
-}
+    <SafeAreaView style={styles.droidSafeArea}>
+      <View style={styles.container}>
+        <Text>
+          Current Weather
+        </Text>
+      </View>
+    </SafeAreaView>
+  )
+};
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: 'pink',
     flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
   },
-});
+  wrapper: {
+    flex: 1,
+  },
+  droidSafeArea: {
+    flex: 1,
+    paddingTop: Platform.OS === 'android' ? 25 : 0
+  },
+})
+export default App;
