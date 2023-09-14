@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text } from 'react-native';
 
 const RowText = (props) =>  {
   const {
@@ -15,9 +15,5 @@ const RowText = (props) =>  {
     </View>
   )
 }
-
-const styles = StyleSheet.create({
-  
-})
 
 export default RowText
