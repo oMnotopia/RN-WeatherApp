@@ -6,7 +6,7 @@ const CurrentWeather = () => {
 
   const {
     container, 
-    droidSafeArea, 
+    wrapper, 
     temp, 
     feels, 
     highLowWrapper, 
@@ -17,7 +17,7 @@ const CurrentWeather = () => {
   } = styles
 
   return (
-    <SafeAreaView style={droidSafeArea}>
+    <SafeAreaView style={wrapper}>
       <View style={container}>
         <Feather name="sun" size={100} color="black" />
         <Text style={temp}>6</Text>
@@ -50,10 +50,9 @@ const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
   },
-  droidSafeArea: {
+  wrapper: {
     backgroundColor: 'pink',
     flex: 1,
-    paddingTop: Platform.OS === 'android' ? 25 : 0
   },
   temp: {
     color: 'black',

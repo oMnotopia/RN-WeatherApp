@@ -10,7 +10,7 @@ import IconText from "../components/IconText";
 
 const City = () => {
   const { 
-    droidSafeArea, 
+    container, 
     cityName, 
     cityText, 
     countryName, 
@@ -22,7 +22,7 @@ const City = () => {
     imageLayout 
   } = styles
   return (
-    <SafeAreaView style={droidSafeArea}>
+    <SafeAreaView style={container}>
       <ImageBackground source={require('../../assets/city-background.jpg')} style={imageLayout}>
         <Text style={[cityName, cityText]}>Vancouver</Text>
         <Text style={[countryName, cityText]}>Canada</Text>
@@ -54,9 +54,9 @@ const City = () => {
 }
 
 const styles = StyleSheet.create({
-  droidSafeArea: {
+  container: {
     flex: 1,
-    paddingTop: Platform.OS === 'android' ? 25 : 0,
+    // paddingTop: Platform.OS === 'android' ? 25 : 0,
   },
   imageLayout: {
     flex: 1

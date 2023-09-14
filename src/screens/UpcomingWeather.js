@@ -140,10 +140,10 @@ const UpcomingWeather = () => {
     />
   )
 
-  const { droidSafeArea, image} = styles
+  const { container, image} = styles
 
   return (
-    <SafeAreaView style={droidSafeArea}>
+    <SafeAreaView style={container}>
       <ImageBackground source={require('../../assets/upcoming-weather.jpg')} style={image}>
         <Text>Upcoming Weather</Text>
         <FlatList 
@@ -157,11 +157,8 @@ const UpcomingWeather = () => {
 };
 
 const styles = StyleSheet.create({
-  droidSafeArea: {
-    backgroundColor: 'royalblue',
+  container: {
     flex: 1,
-    paddingTop: Platform.OS === 'android' ? 25 : 0,
-    // marginTop: StatusBar.currentHeight || 0,
   },
   image: {
     flex: 1
