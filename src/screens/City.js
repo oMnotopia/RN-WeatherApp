@@ -56,7 +56,6 @@ const City = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // paddingTop: Platform.OS === 'android' ? 25 : 0,
   },
   imageLayout: {
     flex: 1
