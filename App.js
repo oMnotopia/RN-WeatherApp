@@ -11,6 +11,22 @@ const App = () => {
   const [loading, setLoading] = useState(false)
   const [location, setLocation] = useState(null)
   const [error, setError] = useState(null)
+  const [weather, setWeather] = useState([])
+  const [lat, setLat] = useState([])
+  const [long, setLong] = useState([])
+
+  const fetchWeatherData = async () => {
+    try {
+
+      const res = await fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${long}&appid=${OPENWEATHER_API_KEY}`)
+      const data = await res.json()
+      setWeather(data)
+    } catch (err) {
+      setError(`Could not fetch weather`)
+    } finally {
+      setLoading(false)
+    }
+  }
 
   useEffect(() => {
     (async () => {
@@ -20,12 +36,14 @@ const App = () => {
         return
       }
       let location = await Location.getCurrentPositionAsync({})
-      setLocation(location)
+      setLat(location.coords.latitude)
+      setLong(location.coords.longitude)
+      await fetchWeatherData()
     })()
-  }, [])
+  }, [lat, long])
 
-  if (location) {
-    console.log(location)
+  if (weather) {
+    console.log(weather)
   }
 
   if(loading) {
