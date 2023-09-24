@@ -14,8 +14,8 @@ const UpcomingWeather = ({ weatherData }) => {
     <ListItem 
       condition={item.weather[0].main} 
       dt_txt={item.dt_txt} 
-      min={Math.round((item.main.temp_min - 273.15) * 10) / 10 } 
-      max={Math.round((item.main.temp_max - 273.15) * 10) / 10 } 
+      min={item.main.temp_min} 
+      max={item.main.temp_max} 
     />
   )
 
