@@ -21,8 +21,9 @@ const Tabs = ({weather}) => {
         headerTitleStyle: {
           fontWeight: 'bold',
           fontSize: 25,
-          color: 'tomato'
-        }
+          color: 'tomato',
+        },
+        headerTitleAlign: 'center'
       }}
     >
       <Tab.Screen 
